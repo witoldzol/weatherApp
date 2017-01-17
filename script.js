@@ -1,6 +1,11 @@
 $(document).ready(function(){
 	//check location of client
-	
+	$("div").click = function (){
+		alert('fok sake');
+	}
+
+
+
 	if(navigator.geolocation) {
 	   	navigator.geolocation.getCurrentPosition(function(position){
 	   		lati = position.coords.latitude;
@@ -23,11 +28,16 @@ $(document).ready(function(){
 	   		});	
 	    });
 	}
-	function toggle(myVal){
-		if(myVal == C) {
-			document.getElementById("temp").value = "keliviny";
+	
+
+	$("#button").click = function fTemp(){
+		alert("works");
+		if($("#button").val() == "Celsius") {
+			$("#button").val("Fahrenheit");
+			$("#temperature").html("100");
 		} else {
-			document.getElementById("temp").value = "celciusze";
+			$("#button").val("Celsius");
+			$("#temperature").html("10");
 		}
 	}
 
