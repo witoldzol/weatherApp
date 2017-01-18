@@ -12,34 +12,38 @@ $(document).ready(function(){
 			long = position.coords.longitude;
 	   		$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng=%20"+ lati +","+long+"&key=AIzaSyDCZv-6H4182qJx3JyRg7hLGvVNSW-ExSQ",function(json){
 	   			var string = JSON.stringify;
-	   			$("#location").html(string(json.results[0].formatted_address));
+	   			$("#location").html(json.results[0].formatted_address);
 	   		});
 	   		$.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lati+"&lon="+long+"&appid=679ec090acbf48a422a8d8e46d7bae9c", function(data){
 	   			var icon = data.weather[0].icon + ".png";
 	   			var weather = data.weather[0].description;
-	   			var temperature =data.main.temp - 273.15;
-	   			console.log(icon);
+	   			var kelvin =data.main.temp;
 	   			var string = JSON.stringify;
-	   			$("#temp").html(string(Math.floor(data.main.temp - 273.15)+"C")); 
-	   			$("#conditions").html(string(weather));
-	   			$("#picture").attr("src", "http://openweathermap.org/img/w/"+icon);
-
 	   			
+	   			
+
+	   			$("#temp").html(Math.floor(kelvin - 273.15)+"°C"); 
+	   			$("#conditions").html(weather);
+	   			$("#picture").attr("src", "http://openweathermap.org/img/w/"+icon);
+	   			$("#temp").css("visibility", "visible")
+	   			$("#conditions").css("visibility", "visible")
+	   			$("#location").css("visibility", "visible")
+	   		$("#button").on("click", function fTemp(){
+	   			
+	   			if($("#button").text() == "Celsius") {
+	   				$("#button").text("Fahrenheit");
+	   				$("#temp").text((Math.floor(kelvin*9/5-459.67)) + "°F");
+	   			} else {
+	   				$("#button").text("Celsius");
+	   				$("#temp").text((Math.floor(kelvin - 273.15))+"°C");
+	   			}
+	   		});	
 	   		});	
 	    });
 	}
 	
 
-	$("#button").click = function fTemp(){
-		alert("works");
-		if($("#button").val() == "Celsius") {
-			$("#button").val("Fahrenheit");
-			$("#temperature").html("100");
-		} else {
-			$("#button").val("Celsius");
-			$("#temperature").html("10");
-		}
-	}
+	
 
 });
 	

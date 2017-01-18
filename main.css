@@ -1,21 +1,90 @@
+.footer {
+	margin: 5px;
+}
+.wrapper h2 {
+color: green;
+padding-bottom: 15px;
+}
+
+.warning {
+margin-bottom: 8%;
+color: red;
+}
+
+#body {
+	background-color: lightgrey;
+}
 .main_head {
-	color: red;
+	color: orange;
+	text-shadow: 1px 1px black;
 }
 
 #picture {
-	max-width: 100px;
-	max-height: 100px;
+	width: 150px;
+	height: 150px;
 }
 #conditions {
 	text-transform: capitalize;
 }
 
 #button {
-	width: 60px;
-	height: 60px;
+	margin: 10px;
+	width: 100px;
+	height: 40px;
 	color: white;
 	font-weight: bold;
-	display: inline-block;
-	background-color: blue;
+	background-color: dodgerblue;
+	border: 1px dodgerblue solid;
 }
 
+#button:hover {
+	background-color: white;
+	color: dodgerblue;
+
+}
+
+.wrapper {
+	margin: 5%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#location {
+	border: 2px solid dodgerblue;
+	padding: 15px 15px 15px 15px;
+	border-radius: 10px;
+	background-color: white;
+	font-weight: bold;
+	font-size: 15px;
+	visibility: hidden;
+	margin:10px 5px 5px 5px;
+	position: relative;
+}
+
+#temp {	
+	text-align: center;
+	line-height: 80px;
+	width: 80px;
+	height: 80px;
+	background-color: white;
+	border-radius: 70%;
+	font-weight: bold;
+	font-size: 30px;
+	visibility: hidden;
+	margin:10px 5px 5px 5px;
+	position: relative;
+}
+#conditions {	
+	padding: 15px 15px 15px 15px;
+	border-radius: 10px;
+	background-color: white;
+	border: 2px solid dodgerblue;
+	font-weight: bold;
+	font-size: 20px;
+	visibility: hidden;
+	margin:10px 5px 5px 5px;
+	position: relative;
+}
